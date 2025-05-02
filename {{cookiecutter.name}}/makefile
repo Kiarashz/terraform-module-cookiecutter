@@ -136,16 +136,16 @@ test_trivy:
 #
 
 tests/go.mod:
-	cd tests && \
+	cd terratest && \
 	go mod init "testing_terraform"
 
 tests/go.sum: tests/go.mod $(TERRATEST_FILES)
-	cd tests && \
+	cd terratest && \
 	go mod tidy
 
 .PHONY: terratest
 terratest: tests/go.sum
-	cd tests && \
+	cd terratest && \
 	TERRATEST_BINARY=$(TF_BINARY) go test -v -timeout 60m $(GO_TEST_OPTS)
 
 
