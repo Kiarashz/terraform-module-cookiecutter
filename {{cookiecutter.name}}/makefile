@@ -63,8 +63,8 @@ install_apt:
 	/tmp/nix-install.sh --no-daemon
 	. ~/.nix-profile/etc/profile.d/nix.sh && \
 	nix-env -f '<nixpkgs>' -iA ${NIX_PACKAGES}
-	. ~/.nix-profile/etc/profile.d/nix.sh && tenv tf install 1.11.4
-	. ~/.nix-profile/etc/profile.d/nix.sh && tenv tf use 1.11.4
+	. ~/.nix-profile/etc/profile.d/nix.sh && tenv tf install ${TERRAFORM_VERSION}
+	. ~/.nix-profile/etc/profile.d/nix.sh && tenv tf use ${TERRAFORM_VERSION}
 	@echo "Please open a new shell or run '. ~/.nix-profile/etc/profile.d/nix.sh'"
 
 #
